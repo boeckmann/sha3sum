@@ -1,0 +1,3 @@
+This folder contains sha_???.txt files with known good check-sums for the
+binary test files under the sha_??? sub-directories, where ??? is one
+of 224, 256, 384 and 512.
