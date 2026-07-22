@@ -57,16 +57,16 @@ void usage(void)
 
 /* a[] is the keccak state. One lane as defined in the specification is
  * represented by two 32-bit unsigned ints. This algorithm depends on
- * the integers being storeed in little-endian representation.
+ * the integers being stored in little-endian representation.
  *
  * The mapping from our state a to A as defined in the spec is:
  *   a[1] * 0x100000000 + a[0] is A[0,0,z] is Lane(0,0)
  *   a[3] * 0x100000000 + a[2] is A[1,0,z] is Lane(1,0)
- *   a[11] * 0x100000000 + a[10] is [A0,1,z] is Lane(0,1)
+ *   a[11] * 0x100000000 + a[10] is A[0,1,z] is Lane(0,1)
  *   a[10*y+2*x+1] * 1x00000000 + a[10*y+2*x] is Lane(x,y)
  */
 
-#define NR 24			/* number of permutation round */
+#define NR 24			/* number of permutation rounds */
 
 static void keccak(u32 a[])
 {
