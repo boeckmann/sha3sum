@@ -99,7 +99,7 @@ static int calculate_sha3_digest(FILE *f, u8 *buf, size_t bufsz, char *digest)
 	sha3_update(&ctx, buf, avail);
     };
 
-    sha3_digest(&ctx, digest);
+    sha3_hexdigest(&ctx, digest);
     return 1;
 }
 

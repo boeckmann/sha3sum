@@ -48,6 +48,6 @@ typedef struct {
 void sha3_init(Sha3Ctx *ctx, int mode);
 void sha3_update(Sha3Ctx *ctx, const u8 *data, size_t len);
 void sha3_finish(Sha3Ctx *ctx);
-void sha3_digest(Sha3Ctx *ctx, char *digest);
+void sha3_hexdigest(Sha3Ctx *ctx, char *digest);
 
 #endif
