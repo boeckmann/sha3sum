@@ -16,11 +16,21 @@ The code is mildly optimized. For example, all expensive modulo 5 operations and
 ```
 Linux Mint 22.3 / Intel(R) Core(TM) i5-8250U:
 
-  This implementation    236 MB/s  100%   (32-bit arithmetic  88 MB/s 37%)
-  fossil sha3sum         242 MB/s  103%
-  libdigest-sha3-perl    169 MB/s   72%
+  This implementation    252 MB/s  100%   (32-bit arithmetic  109 MB/s 43%)
+  fossil sha3sum         244 MB/s   97%
+  libdigest-sha3-perl    173 MB/s   68%
 ```
-This implementation was compiled by GCC 13.3.0 with optimization flag `-Os`. The fossil version is 2.28, binary fetched from the original site at https://fossil-scm.org. libdigest-sha3-perl is version 1.05, installed from the Linux Mint package repository.
+This implementation was compiled by clang 18 with optimization flag `-O2`. The fossil version is 2.28, binary fetched from the original site at https://fossil-scm.org. libdigest-sha3-perl is version 1.05, installed from the Linux Mint package repository.
+
+### SHA3-256, 64-bit C arithmetic, AArch64
+```
+Apple Macbook Air M5:
+
+  This implementation        905 MB/s  100%
+  sha3sum (v1.2.5)           736 MB/s   81%
+  fossil sha3sum (v2.28)     573 MB/s   63%
+```
+Fossil and sha3sum utilities are the versions from Mac Homebrew. The sha3sum homebrew port originates from https://codeberg.org/maandree/sha3sum.
 
 ### SHA3-256, 32-bit C arithmetic, IA16 FreeDOS Kernel 2043
 ```
