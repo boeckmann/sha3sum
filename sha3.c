@@ -26,7 +26,7 @@
  *   a[10*y+2*x+1] * 1x00000000 + a[10*y+2*x] is Lane(x,y)
  */
 
-void keccak32(u32 a[])
+static void keccak32(u32 a[])
 {
     static u32 rc[] = {
 	0x00000001, 0x00000000, 0x00008082, 0x00000000, 0x0000808a, 0x80000000,
@@ -223,7 +223,7 @@ void keccak32(u32 a[])
 
 #else
 
-void keccak64(u64 a[])
+static void keccak64(u64 a[])
 {
     static u64 rc[] = {
 	0x0000000000000001, 0x0000000000008082, 0x800000000000808a, 0x8000000080008000,
